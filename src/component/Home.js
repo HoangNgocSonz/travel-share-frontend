@@ -10,11 +10,6 @@ export default class Read extends Component{
   }
 
   componentDidMount() {
-    // axios.get(`https://betruyen2.herokuapp.com/api/chapter/${this.props.match.params.chapterid}`, {
-    //  })
-    //   .then(res => {
-    //   })
-    //   .catch(error => console.log(error));
 
     axios.get('https://travel-share-backend.herokuapp.com/api/user')
     .then(res=>{
