@@ -1,20 +1,26 @@
 import React, {Component} from 'react'; 
 import axios from 'axios';
+import FormPostToHomePage from './FormPostToHomePage';
+import Navbar from './Navbar';
+import './Home.css'
 
 export default class Read extends Component{
   constructor(props){
     super(props);
     this.state = {
       chapter:[],
+      showForm:false
     }
   }
-
-  componentDidMount() {
-
+  showFormPostToHomePage=()=>{
+      document.getElementById("FormPostToHomePages").style.display="block";
+  }
+  hideFormPostToHomePage=()=>{
+    document.getElementById("FormPostToHomePages").style.display="none";
+}
+  componentDidMount(){
     axios.get('https://travel-share-backend.herokuapp.com/api/user')
     .then(res=>{
-        console.log(res.data);
-        console.log("it work")
     })
     .catch(error => console.log(error));
   }
@@ -28,6 +34,10 @@ export default class Read extends Component{
     }
     return (
       <div>
+        <Navbar showForm={this.showFormPostToHomePage} ></Navbar>
+        <div id="FormPostToHomePages">
+          <FormPostToHomePage hideForm={this.hideFormPostToHomePage}></FormPostToHomePage>
+        </div>
       </div>
     );
   }
