@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import FormPostToHomePage from './FormPostToHomePage';
 import Navbar from './Navbar';
+import FormSignup from './FormSignUp';
 import './Home.css'
 
 export default class Read extends Component{
@@ -35,6 +36,7 @@ export default class Read extends Component{
     return (
       <div>
         <Navbar showForm={this.showFormPostToHomePage} ></Navbar>
+        <FormSignup showForm={this.showFormPostToHomePage} ></FormSignup>
         <div id="FormPostToHomePages">
           <FormPostToHomePage hideForm={this.hideFormPostToHomePage}></FormPostToHomePage>
         </div>
