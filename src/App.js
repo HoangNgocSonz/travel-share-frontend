@@ -1,6 +1,5 @@
-import React from 'react';
-import Home from './mainScreen/Home'
-
+import React from "react";
+import Home from "./mainScreen/Home";
 
 function App() {
   return (
