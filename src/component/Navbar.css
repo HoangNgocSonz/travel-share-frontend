@@ -1,13 +1,18 @@
-.logoImg{
-    height: 40px;
-    margin-left: 5px;
-    margin-right: 14px;
+.logoImg {
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 14px;
 }
 .navbar-light .navbar-nav .nav-link {
-    color: rgb(0, 0, 0) !important
+  color: rgb(0, 0, 0) !important;
 }
-.mr-auto img{
-    height: 30px;
-    margin-top:7px;
-    margin-left: 15px;
+.mr-auto img {
+  height: 30px;
+  margin-top: 7px;
+  margin-left: 15px;
+}
+.mr-auto img:hover {
+  height: 34px;
+  margin-top: 5px;
+  margin-left: 13px;
 }

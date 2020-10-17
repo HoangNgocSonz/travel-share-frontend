@@ -1,126 +1,135 @@
-.top{
-    height: 28px;
-    background-color: #f5f6f7;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom: 1px rgb(219, 219, 219) solid;
+.top {
+  height: 28px;
+  background-color: #f5f6f7;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px rgb(219, 219, 219) solid;
 }
-.top img{
-    height: 50%;
-    display: inline;
-    float: right;
-    margin-top:5px;
-    margin-right: 10px;
+.top img {
+  height: 50%;
+  display: inline;
+  float: right;
+  margin-top: 6px;
+  margin-right: 10px;
 }
-.top span{
-    font-weight: 700;
-    font-size: 12px;
-    color: #4b4f56;
-    margin-left: 10px;
+.top img:hover {
+  height: 60%;
+  margin-right: 8px;
+  margin-top: 5px;
 }
-.form{
-    /* height: 180px; */
-    width: 500px;
-    margin: auto;
-    border-radius: 4px;
-    border: 1px rgb(219, 219, 219) solid;
+.top span {
+  font-weight: 700;
+  font-size: 12px;
+  color: #4b4f56;
+  margin-left: 10px;
 }
-.middle{
-    height: 100px;
+.form {
+  /* height: 180px; */
+  width: 500px;
+  margin: auto;
+  border-radius: 4px;
+  border: 1px rgb(219, 219, 219) solid;
 }
-.middle input{
-    height: 30px;
-    border: none;
-    outline: none;
-    font-size: 23px;
-    width: 400px;
-    float: right;
-    margin-top:20px;
-    margin-right: 30px;
+.middle {
+  height: 130px;
 }
-.middle img{
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    margin-left: 10px;
-    margin-top: 15px;
-    border:1px rgb(230, 230, 230) solid;
+.middle input {
+  height: 30px;
+  border: none;
+  outline: none;
+  font-size: 23px;
+  width: 400px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 30px;
+  padding: 4px;
 }
-.addImg{
-    width: 138px;
-    height: 32px;
-    background-color:rgb(243, 243, 243);
-    padding:none;
-    border-radius: 16px;
-    float: left;
+.middle img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 15px;
+  border: 1px rgb(230, 230, 230) solid;
 }
-.addImg img{
-    width: 30px;
-    height: 30px;
-    display: inline;
-    float: left;
-    margin-top: 1px;
-    margin-left: 8px;
-    display: inline;
-
+.addImg {
+  width: 138px;
+  height: 32px;
+  background-color: rgb(243, 243, 243);
+  padding: none;
+  border-radius: 16px;
+  float: left;
 }
-.addImg input{
-    display: inline;
-    width: 59%;
-    float: right;
-    margin-right: 5px;
-    outline: none;
-    margin-top: 2px;
-    border:none;
-    background-color: rgb(243, 243, 243);
-    border-radius: 6px;
+.addImg img {
+  width: 30px;
+  height: 30px;
+  display: inline;
+  float: left;
+  margin-top: 1px;
+  margin-left: 8px;
+  display: inline;
 }
-.bottom{
-    padding:12px 10px 10px 10px;
+.addImg input {
+  display: inline;
+  width: 59%;
+  float: right;
+  margin-right: 5px;
+  outline: none;
+  margin-top: 2px;
+  border: none;
+  background-color: rgb(243, 243, 243);
+  border-radius: 6px;
 }
-.hr{
-    width: 96%;
-    border-bottom: 1px rgb(190, 190, 190) solid;
-    margin: auto;
+.bottom {
+  padding: 12px 10px 10px 10px;
 }
-.addTime{
-    width: 138px;
-    height: 32px;
-    background-color:rgb(243, 243, 243);
-    padding:none;
-    border-radius: 16px;
-    float: left;
-    margin-left: 20px;
-    border:none;
-    outline: none;
+.hr {
+  width: 96%;
+  border-bottom: 1px rgb(190, 190, 190) solid;
+  margin: auto;
 }
-.select{
-    opacity: 0.5;
-    margin-left: 25px;
-    margin-top: 5px;
-    border:none;
-    outline:none;
-    background-color:rgb(243, 243, 243);
+.addTime {
+  width: 138px;
+  height: 32px;
+  background-color: rgb(243, 243, 243);
+  padding: none;
+  border-radius: 16px;
+  float: left;
+  margin-left: 20px;
+  border: none;
+  outline: none;
 }
-.post{
-    width: 480px;
-    border: none;
-    background-color: rgb(6, 212, 168);
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 15px;
-    color: #ffffff;
-    margin-top:12px;
-    padding-top: 2px;
-    padding-bottom:3px;
-    outline: none;
+.select {
+  opacity: 0.5;
+  margin-left: 25px;
+  margin-top: 5px;
+  border: none;
+  outline: none;
+  background-color: rgb(243, 243, 243);
+}
+.post {
+  width: 480px;
+  border: none;
+  background-color: rgb(6, 212, 168);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  margin-top: 12px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  outline: none;
 }
 .post:active {
-    outline: none;
-    border: none;
+  outline: none;
+  border: none;
 }
 .post:focus {
-    outline:0;
-    background-color:rgb(0, 165, 129) ;
-
+  outline: 0;
+  background-color: rgb(0, 165, 129);
+}
+.textarea {
+  border: none;
+  outline: none;
+  margin-left: 72px;
 }
