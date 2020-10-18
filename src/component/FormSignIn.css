@@ -77,7 +77,7 @@ input:valid::-webkit-input-placeholder {
     margin-top: 20px;
     border-top: rgb(153, 153, 153) 1px solid;
     padding-top: 10px;
-    padding-left: 80px;
+    padding-left: 88px;
 }
 
 .create-acc p{
@@ -98,7 +98,7 @@ input:valid::-webkit-input-placeholder {
         font-size: x-small;
       }
       .form-sign-in button{
-        width: 60px;
+        width: 70px;
       }
 
       .form-sign-in >a{
@@ -106,7 +106,7 @@ input:valid::-webkit-input-placeholder {
       }
 
       .create-acc{
-        padding-left: 20px;
+        padding-left: 28px;
       }
 
       .form-sign-in input{

@@ -5,14 +5,14 @@ export default class Login extends Component {
   render() {
     return (
       <form class="form-sign-in">
-        <h1>Sign in</h1>
+        <h1>Đăng nhập</h1>
         <input placeholder="Email" type="email" required=""/>
-        <input placeholder="Password" type="password" required=""/>
-        <button>Sign in</button>
-        <a href="#link">Forgot Password?</a>
+        <input placeholder="Mật khẩu" type="password" required=""/>
+        <button>Đăng nhập</button>
+        <a href="#link">Quên mật khẩu?</a>
         <div class="create-acc">
-          <p>Don't have an account? </p>
-          <a href="#link">Create one</a>
+          <p>Bạn chưa có tài khoản? </p>
+          <a href="#link">Đăng ký</a>
         </div>
       </form>
     );

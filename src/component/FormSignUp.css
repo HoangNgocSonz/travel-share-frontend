@@ -82,7 +82,7 @@
       margin-top: 20px;
       border-top: rgb(153, 153, 153) 1px solid;
       padding-top: 10px;
-      padding-left: 68px;
+      padding-left: 86px;
   }
   
   .go-sign-in p{
@@ -103,11 +103,11 @@
           font-size: x-small;
         }
         .form-sign-up button{
-          width: 60px;
+          width: 70px;
         }
   
         .go-sign-in{
-          padding-left: 20px;
+          padding-left: 30px;
         }
 
         .form-sign-up input{
