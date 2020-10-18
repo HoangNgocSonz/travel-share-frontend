@@ -1,6 +1,6 @@
 .form-sign-up {
     box-sizing: border-box;
-    width: 600px;
+    width: 400px;
     margin: 100px auto 0;
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
     padding-bottom: 40px;
@@ -12,19 +12,35 @@
     text-align: center;
   }
   
+  .form-sign-up input[type="text"]{
+      background: url("../access/user.png") no-repeat 0px 10px;
+      background-size: 20px;
+  }
+
+  .form-sign-up input[type="email"]{
+    background: url("../access/email.png") no-repeat 0px 10px;
+    background-size: 25px;
+  }
+
+  .form-sign-up input#pass{
+    background: url("../access/pass.png") no-repeat 0px 10px;
+    background-size: 20px;
+  }
+
+  .form-sign-up input#cf-pass{
+    background: url("../access/cf_pass.png") no-repeat 0px 10px;
+    background-size: 25px;
+  }
+
+
+
   .form-sign-up input {
     margin: 8%;
     width: 80%;
     display: block;
     border: none;
-    padding: 10px 0;
-    border-bottom: solid 1px #1abc9c;
-    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 96%,
-      #1abc9c 4%
-    );
+    padding: 10px 30px;
+    border-bottom: solid 2px #1abc9c;
     background-position: -200px 0;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -66,7 +82,7 @@
       margin-top: 20px;
       border-top: rgb(153, 153, 153) 1px solid;
       padding-top: 10px;
-      padding-left: 180px;
+      padding-left: 68px;
   }
   
   .go-sign-in p{
@@ -92,5 +108,25 @@
   
         .go-sign-in{
           padding-left: 20px;
+        }
+
+        .form-sign-up input{
+            padding-left: 20px;
+        }
+
+        .form-sign-up input[type="text"]{
+            background-size: 15px;
+        }
+      
+        .form-sign-up input[type="email"]{
+          background-size: 18px;
+        }
+      
+        .form-sign-up input#pass{
+          background-size: 15px;
+        }
+      
+        .form-sign-up input#cf-pass{
+          background-size: 18px;
         }
   }
