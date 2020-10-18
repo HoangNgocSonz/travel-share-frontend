@@ -46,7 +46,7 @@ export default class postList extends Component {
   setWidth() {}
   render() {
     var postList = this.state.postList.map((post) => (
-      <div className="DadImgShow">
+      <div className="DadImgShow" key={post._id}>
         <img className="imageToShowInHomePage" src={post.images[0]}></img>
         <p className="title">{post.title}</p>
       </div>
