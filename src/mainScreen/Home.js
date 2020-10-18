@@ -4,6 +4,7 @@ import FormPostToHomePage from "../component/FormPostToHomePage";
 import Navbar from "../component/Navbar";
 import "./Home.css";
 import PostList from "../component/PostList";
+import Select from "../component/Select";
 
 export default class Read extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ export default class Read extends Component {
   render() {
     return (
       <div>
+        <Select></Select>
         <Navbar showForm={this.showFormPostToHomePage}></Navbar>
         <div id="FormPostToHomePages">
           <FormPostToHomePage

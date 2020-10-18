@@ -64,7 +64,6 @@
   width: 30px;
   height: 30px;
   display: inline;
-  float: left;
   margin-top: 1px;
   margin-left: 8px;
   display: inline;
@@ -88,24 +87,28 @@
   border-bottom: 1px rgb(190, 190, 190) solid;
   margin: auto;
 }
-.addTime {
+.addTime,
+.addLocation {
   width: 138px;
   height: 32px;
   background-color: rgb(243, 243, 243);
   padding: none;
   border-radius: 16px;
-  float: left;
-  margin-left: 20px;
   border: none;
   outline: none;
 }
-.select {
+.select-time,
+.select-location {
+  width: 95px;
   opacity: 0.5;
   margin-left: 25px;
   margin-top: 5px;
   border: none;
   outline: none;
   background-color: rgb(243, 243, 243);
+}
+.select-location {
+  width: 90px;
 }
 .post {
   width: 480px;
