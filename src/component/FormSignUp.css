@@ -13,23 +13,23 @@
   }
   
   .form-sign-up input[type="text"]{
-      background: url("../access/user.png") no-repeat 0px 10px;
+      background: url("../access/user.png") no-repeat 0px 4px;
       background-size: 20px;
   }
 
   .form-sign-up input[type="email"]{
-    background: url("../access/email.png") no-repeat 0px 10px;
+    background: url("../access/email.png") no-repeat 0px 4px;
     background-size: 25px;
   }
 
   .form-sign-up input#pass{
-    background: url("../access/pass.png") no-repeat 0px 10px;
+    background: url("../access/pass.png") no-repeat 0px 3.5px;
     background-size: 20px;
   }
 
   .form-sign-up input#cf-pass{
-    background: url("../access/cf_pass.png") no-repeat 0px 10px;
-    background-size: 25px;
+    background: url("../access/cf_pass.png") no-repeat 0px 3.5px;
+    background-size: 23px;
   }
 
 
@@ -39,7 +39,7 @@
     width: 80%;
     display: block;
     border: none;
-    padding: 10px 30px;
+    padding: 6px 30px;
     border-bottom: solid 2px #1abc9c;
     background-position: -200px 0;
     background-size: 100%;
@@ -127,6 +127,6 @@
         }
       
         .form-sign-up input#cf-pass{
-          background-size: 18px;
+          background-size: 17px;
         }
   }

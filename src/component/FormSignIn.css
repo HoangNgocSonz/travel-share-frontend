@@ -17,12 +17,12 @@
 }
 
 .form-sign-in input[type="email"]{
-  background: url("../access/email.png") no-repeat 0px 10px;
+  background: url("../access/email.png") no-repeat 0px 4px;
   background-size: 25px;
 }
 
 .form-sign-in input[type="password"]{
-  background: url("../access/pass.png") no-repeat 0px 10px;
+  background: url("../access/pass.png") no-repeat 0px 3.5px;
   background-size: 20px;
 }
 
@@ -31,7 +31,7 @@
   width: 80%;
   display: block;
   border: none;
-  padding: 10px 30px;
+  padding: 6px 30px;
   border-bottom: solid 2px #1abc9c;
   background-repeat: no-repeat;
   color: #0e6252;
