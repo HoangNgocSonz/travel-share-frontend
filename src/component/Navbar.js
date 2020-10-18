@@ -6,7 +6,8 @@ class NavBar extends Component {
   componentDidMount = () => {};
   render() {
     return (
-      <Navbar className="navbar" bg="light" expand="lg">
+      <Navbar className="navbar" bg="light" variant="light" expand="lg">
+        <Navbar.Brand href="/">Team 20</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -17,6 +18,7 @@ class NavBar extends Component {
             <img
               src={require("../access/plus.png")}
               onClick={this.props.showForm}
+              alt="img"
             ></img>
           </Nav>
           <Form inline>

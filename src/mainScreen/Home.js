@@ -6,6 +6,7 @@ import "./Home.css";
 import PostList from "../component/PostList";
 import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
+import PostDetail from "../component/PostDetail";
 
 export default class Read extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Read extends Component {
         <div className="postList">
           <PostList></PostList>
         </div>
+        {/* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */}
       </div>
     );
   }
