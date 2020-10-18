@@ -1,51 +1,21 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./FormSignUp.css";
 
-export default class FormSignUp extends Component {
-  render() {
-    return (
-      <form>
-        <h3>Sign Up</h3>
-
-        <div className="form-group">
-          <label>First name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="First name"
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Last name" />
-        </div>
-
-        <div className="form-group">
-          <label>Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Enter email"
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary btn-block">
-          Sign Up
-        </button>
-        <p className="forgot-password text-right">
-          Already registered <a href="#">sign in?</a>
-        </p>
-      </form>
-    );
-  }
+export default class Login extends Component {
+    render() {
+        return (
+            <form class="form-sign-up">
+                <h1>Sign up</h1>
+                <input placeholder="Username" type="text"/>
+                <input placeholder="Email" type="email" />
+                <input placeholder="Password" type="password"/>
+                <input placeholder="Confirm Password" type="password"/>
+                <button>Sign up</button>
+                <div class="go-sign-in">
+                    <p>Already have an account? </p>
+                    <a href="#link">Sign in here</a>
+                </div>
+            </form>
+        );
+    }
 }
