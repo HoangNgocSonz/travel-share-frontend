@@ -8,6 +8,7 @@ import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
 import UserDetail from "../component/UserDetail";
+import AboutUs from "../component/AboutUs";
 
 export default class Read extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ export default class Read extends Component {
         <div>
           <FormSignIn showForm={this.showFormPostToHomePage}></FormSignIn>
           <FormSignUp showForm={this.showFormPostToHomePage}></FormSignUp>
+          <AboutUs showForm={this.showFormPostToHomePage}></AboutUs>
         </div>
         <div className="postList">
           <PostList></PostList>
