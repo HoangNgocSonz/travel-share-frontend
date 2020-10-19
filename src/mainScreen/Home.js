@@ -8,33 +8,53 @@ import Select from "../component/Select";
 import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
 
-export default class Read extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      loggedIn: localStorage.user === "true",
+    };
   }
   showFormPostToHomePage = () => {
     document.getElementById("FormPostToHomePages").style.display = "block";
-    document.getElementById("FormPostToHomePages").style.position = "relative";
+    document.getElementById("postList").style.display = "none";
   };
   hideFormPostToHomePage = () => {
     document.getElementById("FormPostToHomePages").style.display = "none";
+    document.getElementById("postList").style.display = "block";
+  };
+  login() {
+    document.getElementById("FormLogin").style.display = "block";
+    document.getElementById("postList").style.display = "none";
+  }
+
+  signInSuccess = () => {
+    localStorage.user = "true";
+    this.setState({
+      loggedIn: true,
+    });
   };
 
   render() {
     return (
-      <div>
-        <Navbar showForm={this.showFormPostToHomePage}></Navbar>
+      <div id="homePage">
+        <Navbar
+          loggedIn={this.state.loggedIn}
+          login={this.login}
+          showForm={this.showFormPostToHomePage}
+        ></Navbar>
         <div id="FormPostToHomePages">
           <FormPostToHomePage
             hideForm={this.hideFormPostToHomePage}
           ></FormPostToHomePage>
         </div>
+        <div className="FormLogin" id="FormLogin">
+          <FormSignIn signInSuccess={this.signInSuccess}></FormSignIn>
+        </div>
         {/* <div>
-          <FormSignIn showForm={this.showFormPostToHomePage}></FormSignIn>
-          <FormSignUp showForm={this.showFormPostToHomePage}></FormSignUp>
+          <FormSignUp></FormSignUp>
         </div> */}
-        <div className="postList">
+        <div className="postList" id="postList">
           <PostList></PostList>
         </div>
       </div>

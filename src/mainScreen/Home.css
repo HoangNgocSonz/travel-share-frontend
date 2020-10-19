@@ -1,6 +1,17 @@
-/* #FormPostToHomePages {
+#FormPostToHomePages {
   display: none;
-} */
+}
 .postList {
   margin-top: 10px;
+}
+.homePageWhenShowFormPost {
+  background-color: rgb(30, 30, 34);
+  height: 1300px;
+}
+.homePageWhenHideFormPost {
+  background-color: white;
+  height: auto;
+}
+.FormLogin {
+  display: none;
 }
