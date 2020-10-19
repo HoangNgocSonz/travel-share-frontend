@@ -3,7 +3,7 @@ import axios from "axios";
 import "./PostList.css";
 import StackGrid from "react-stack-grid";
 
-export default class postList extends Component {
+export default class PostList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ export default class postList extends Component {
   }
   componentDidMount() {
     console.log("width:" + window.innerWidth);
-    if ((window.innerWidth < 900) & (window.innerWidth > 372)) {
+    if (window.innerWidth < 900 && window.innerWidth > 372) {
       this.setState({
         widthImg: 176,
       });

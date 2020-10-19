@@ -7,28 +7,33 @@ import PostList from "../component/PostList";
 import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
+import UserDetail from "../component/UserDetail";
 
 export default class Read extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      displayPostForm: false,
+    };
   }
   showFormPostToHomePage = () => {
-    document.getElementById("FormPostToHomePages").style.display = "block";
+    this.setState((prev) => ({ ...prev, displayPostForm: true }));
   };
   hideFormPostToHomePage = () => {
-    document.getElementById("FormPostToHomePages").style.display = "none";
+    this.setState((prev) => ({ ...prev, displayPostForm: false }));
   };
 
   render() {
     return (
       <div>
         <Navbar showForm={this.showFormPostToHomePage}></Navbar>
-        <div id="FormPostToHomePages">
-          <FormPostToHomePage
-            hideForm={this.hideFormPostToHomePage}
-          ></FormPostToHomePage>
-        </div>
+        {this.state.displayPostForm && (
+          <div id="FormPostToHomePages">
+            <FormPostToHomePage
+              hideForm={this.hideFormPostToHomePage}
+            ></FormPostToHomePage>
+          </div>
+        )}
         <div>
           <FormSignIn showForm={this.showFormPostToHomePage}></FormSignIn>
           <FormSignUp showForm={this.showFormPostToHomePage}></FormSignUp>
@@ -37,6 +42,7 @@ export default class Read extends Component {
           <PostList></PostList>
         </div>
         {/* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */}
+        {/* <UserDetail authorId="5f796dd318d2b23eac946be6" /> */}
       </div>
     );
   }
