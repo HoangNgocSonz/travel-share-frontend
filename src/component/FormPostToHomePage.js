@@ -35,8 +35,8 @@ export default class FormPostToHomePage extends Component {
     return (
       <div>
         <br></br>
-        <div class="form">
-          <div class="top">
+        <div className="form">
+          <div className="top">
             <span>Tạo bài viết</span>
             <img
               src={require("../access/x-png-18.png")}

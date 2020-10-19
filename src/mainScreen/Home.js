@@ -7,6 +7,8 @@ import PostList from "../component/PostList";
 import Select from "../component/Select";
 import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
+import PostDetail from "../component/PostDetail";
+import UserDetail from "../component/UserDetail";
 
 export default class Home extends Component {
   constructor(props) {
@@ -33,12 +35,29 @@ export default class Home extends Component {
     this.setState({
       loggedIn: true,
     });
+    this.refreshPage();
   };
-
+  signout = () => {
+    localStorage.user = "false";
+    this.refreshPage();
+  };
+  refreshPage = () => {
+    window.location.reload(false);
+  };
+  showFromSignUp = () => {
+    document.getElementById("FormLogin").style.display = "none";
+    document.getElementById("FormSignUp").style.display = "block";
+  };
+  signUpToSignIn = () => {
+    console.log("eee");
+    document.getElementById("FormLogin").style.display = "block";
+    document.getElementById("FormSignUp").style.display = "none";
+  };
   render() {
     return (
       <div id="homePage">
         <Navbar
+          signout={this.signout}
           loggedIn={this.state.loggedIn}
           login={this.login}
           showForm={this.showFormPostToHomePage}
@@ -49,14 +68,19 @@ export default class Home extends Component {
           ></FormPostToHomePage>
         </div>
         <div className="FormLogin" id="FormLogin">
-          <FormSignIn signInSuccess={this.signInSuccess}></FormSignIn>
+          <FormSignIn
+            showFromSignUp={this.showFromSignUp}
+            signInSuccess={this.signInSuccess}
+          ></FormSignIn>
         </div>
-        {/* <div>
-          <FormSignUp></FormSignUp>
-        </div> */}
+        <div className="FormSignUp" id="FormSignUp">
+          <FormSignUp signUpToSignIn={this.signUpToSignIn}></FormSignUp>
+        </div>
         <div className="postList" id="postList">
           <PostList></PostList>
         </div>
+        {/* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */}
+        {/* <UserDetail authorId="5f796dd318d2b23eac946be6" /> */}
       </div>
     );
   }

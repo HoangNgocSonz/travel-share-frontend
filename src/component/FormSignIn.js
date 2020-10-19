@@ -16,15 +16,24 @@ export default class Login extends Component {
           res.data.data[0].password == document.getElementById("password").value
         ) {
           this.props.signInSuccess();
+        } else {
+          console.log("wrong");
+          document.getElementById("password").classList.add("wrongPassWord");
         }
       })
       .catch((err) => console.log("err: " + err));
   };
   render() {
     return (
-      <form class="form-sign-in">
+      <form className="form-sign-in">
         <h1>Đăng nhập</h1>
-        <input placeholder="Email" id="email" type="email" required="" />
+        <input
+          placeholder="Email"
+          className="inputEmail"
+          id="email"
+          type="email"
+          required=""
+        />
         <input
           placeholder="Mật khẩu"
           id="password"
@@ -33,9 +42,11 @@ export default class Login extends Component {
         />
         <button onClick={this.startLogin}>Đăng nhập</button>
         <a href="#link">Quên mật khẩu?</a>
-        <div class="create-acc">
+        <div className="create-acc">
           <p>Bạn chưa có tài khoản? </p>
-          <a href="#link">Đăng ký</a>
+          <a href="#link" onClick={this.props.showFromSignUp}>
+            Đăng ký
+          </a>
         </div>
       </form>
     );

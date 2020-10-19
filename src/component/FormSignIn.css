@@ -36,6 +36,9 @@
   background-repeat: no-repeat;
   color: #0e6252;
 }
+.wrongPassWord {
+  border-bottom: solid 2px #ff5b29 !important;
+}
 input:focus,
 input:valid {
   box-shadow: none;
