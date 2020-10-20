@@ -16,7 +16,11 @@ class NavBar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Trang chủ</Nav.Link>
+            <div className="backgroundTrangchu">
+              <Nav.Link id="trangchu" href="/">
+                Trang chủ
+              </Nav.Link>
+            </div>
             {this.props.loggedIn == true ? (
               <Nav.Link href="#link" id="follow">
                 Theo dõi
@@ -62,7 +66,7 @@ class NavBar extends Component {
               ""
             )}
           </Nav>
-          <Form inline>
+          <Form inline className="search">
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>

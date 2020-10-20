@@ -9,6 +9,7 @@ import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
 import UserDetail from "../component/UserDetail";
+import AboutUs from "../component/AboutUs";
 
 export default class Home extends Component {
   constructor(props) {

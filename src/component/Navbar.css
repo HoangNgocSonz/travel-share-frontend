@@ -7,11 +7,14 @@
 .navbar-light .navbar-nav .nav-link {
   color: rgb(0, 0, 0) !important;
 }
-
+.navbar {
+  margin-top: 7px;
+}
 .mr-auto img {
   height: 30px;
   margin-top: 7px;
   margin-left: 15px;
+  margin-right: 15px;
 }
 
 .mr-auto img:hover {
@@ -23,7 +26,58 @@
   display: none;
 }
 .logoTeam {
-  height: 28px;
+  height: 51px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: -5px;
+}
+#homePage .bg-light {
+  background-color: rgb(255, 255, 255) !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 400;
+  color: rgb(0, 0, 0) !important;
+  font-size: 20px;
+}
+@media only screen and (min-width: 600px) {
+  .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    width: 50vw !important;
+    border-radius: 23px;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    height: 46px;
+    /* box-shadow: rgb(184, 184, 184) 0.5px 0.5px 0.5px 0.5px !important;
+    padding-left: 25px !important; */
+  }
+}
+#basic-navbar-nav .mr-auto,
+.mx-auto {
+  margin-right: 10px !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica,
+    ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3, Hiragino Kaku Gothic Pro, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
+    ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  color: #333 !important;
+  font-size: 16px;
+  margin-top: 2px;
+}
+.backgroundTrangchu {
+  height: 46px;
+  background-color: #211922;
+  border-radius: 23px;
+  margin-right: 10px;
+}
+#trangchu {
+  color: rgb(238, 238, 238) !important;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: -10px;
 }
