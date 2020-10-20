@@ -2,14 +2,19 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./PostList.css";
 import StackGrid from "react-stack-grid";
+import { withRouter } from "react-router-dom";
+// import { browserHistory } from "react-router";
 
-export default class PostList extends Component {
+// import { useHistory } from "react-router-dom";
+
+class PostList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postList: [],
+      posts: [],
       widthImg: 248,
     };
+    this.redirectTo = this.redirectTo.bind(this);
   }
   componentDidMount() {
     console.log("width:" + window.innerWidth);
@@ -34,28 +39,43 @@ export default class PostList extends Component {
       });
     }
     axios
-      .get("https://travel-share-backend.herokuapp.com/api/post")
+      .get(`https://travel-share-backend.herokuapp.com/api/post`)
       .then((res) => {
-        this.setState({
-          postList: res.data.data,
-        });
-        console.log(this.state.postList);
+        this.setState((prev) => ({
+          ...prev,
+          posts: res.data.data?.posts || res.data.data,
+        }));
       })
       .catch((err) => console.log("err:" + err));
   }
-  setWidth() {}
-  render() {
-    var postList = this.state.postList.map((post) => (
-      <div className="DadImgShow" key={post._id}>
-        <img className="imageToShowInHomePage" src={post.images[0]}></img>
-        <p className="title">{post.title}</p>
-      </div>
-    ));
 
+  redirectTo(id) {
+    console.log(this.props.history);
+    this.props.history.push(`/post/${id}`);
+  }
+
+  render() {
+    var postList = this.state.posts
+      .filter(
+        (post) =>
+          !this.props.authors || this.props.authors.includes(post.author)
+      )
+      .map((post) => (
+        <div
+          className="DadImgShow"
+          key={post._id}
+          onClick={() => this.redirectTo(post._id)}
+        >
+          <img className="imageToShowInHomePage" src={post.images}></img>
+          <p className="title">{post.title}</p>
+        </div>
+      ));
     return (
-      <div>
+      <div className="my-5">
         <StackGrid columnWidth={this.state.widthImg}>{postList}</StackGrid>
       </div>
     );
   }
 }
+
+export default withRouter(PostList);

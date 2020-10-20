@@ -8,7 +8,15 @@ import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
 import UserDetail from "../component/UserDetail";
+import NotFound from "../component/NotFound";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 export default class Read extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +33,7 @@ export default class Read extends Component {
 
   render() {
     return (
-      <div>
+      <Router>
         <Navbar showForm={this.showFormPostToHomePage}></Navbar>
         {this.state.displayPostForm && (
           <div id="FormPostToHomePages">
@@ -34,16 +42,28 @@ export default class Read extends Component {
             ></FormPostToHomePage>
           </div>
         )}
-        <div>
-          <FormSignIn showForm={this.showFormPostToHomePage}></FormSignIn>
-          <FormSignUp showForm={this.showFormPostToHomePage}></FormSignUp>
-        </div>
-        <div className="postList">
-          <PostList></PostList>
-        </div>
-        {/* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */}
-        {/* <UserDetail authorId="5f796dd318d2b23eac946be6" /> */}
-      </div>
+        <Switch>
+          <Route path="/" exact>
+            <div className="postList">
+              <PostList />
+            </div>
+          </Route>
+          <Route path="/user/:id" component={UserDetail} />
+          <Route path="/post/:id" component={PostDetail} />
+          <Route path="/signin">
+            <FormSignIn showForm={this.showFormPostToHomePage}></FormSignIn>
+          </Route>
+          <Route path="/signup">
+            <FormSignUp showForm={this.showFormPostToHomePage}></FormSignUp>
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+      // <div>
+      //   <div>
+      //   </div>
+      /* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */
+      // </div>
     );
   }
 }
