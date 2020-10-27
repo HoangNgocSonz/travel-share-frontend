@@ -12,7 +12,6 @@ export default class PostList extends Component {
     };
   }
   componentDidMount() {
-    console.log("width:" + window.innerWidth);
     if (window.innerWidth < 900 && window.innerWidth > 372) {
       this.setState({
         widthImg: 176,
@@ -39,7 +38,6 @@ export default class PostList extends Component {
         this.setState({
           postList: res.data.data,
         });
-        console.log(this.state.postList);
       })
       .catch((err) => console.log("err:" + err));
   }

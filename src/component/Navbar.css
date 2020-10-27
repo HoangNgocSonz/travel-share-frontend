@@ -12,11 +12,11 @@
 }
 .mr-auto img {
   height: 30px;
+  width: 30px;
   margin-top: 7px;
   margin-left: 15px;
   margin-right: 15px;
 }
-
 .mr-auto img:hover {
   height: 34px;
   margin-top: 5px;
@@ -42,17 +42,34 @@
 @media only screen and (min-width: 600px) {
   .form-inline .form-control {
     display: inline-block;
-    width: auto;
     vertical-align: middle;
-    width: 50vw !important;
-    border-radius: 23px;
+    width: calc(100vw - 700px) !important;
+    margin-left: 16px;
     background-color: rgb(235, 235, 235);
     border: none;
     outline: none;
     height: 46px;
-    /* box-shadow: rgb(184, 184, 184) 0.5px 0.5px 0.5px 0.5px !important;
-    padding-left: 25px !important; */
   }
+  .inputSearch {
+    height: 46px;
+    width: calc(100vw - 640px) !important;
+    border-radius: 23px;
+    background-color: rgb(235, 235, 235);
+  }
+  input:focus {
+    outline: none !important;
+    outline-style: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    background-color: none;
+  }
+  input:focus .inputSearch {
+    background-color: white !important;
+  }
+}
+.inputSeatchFocus {
+  background-color: white;
+  box-shadow: 0px 1px 4px #cacaca;
 }
 #basic-navbar-nav .mr-auto,
 .mx-auto {
@@ -80,4 +97,26 @@
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: -10px;
+}
+.AiFillSettings svg,
+.FaBells svg {
+  stroke: currentcolor;
+  fill: currentcolor;
+  stroke-width: 0;
+  height: 1.8em !important;
+  width: 1.8em !important;
+  opacity: 0.6;
+  margin-top: 8px;
+  margin-left: 8.6px;
+}
+.AiFillSettings,
+.FaBells {
+  height: 46px;
+  width: 46px;
+  border-radius: 23px;
+  margin-left: 15px;
+}
+.FaBells:hover,
+.AiFillSettings:hover {
+  background-color: rgb(235, 235, 235);
 }

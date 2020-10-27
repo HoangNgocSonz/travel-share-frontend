@@ -2,19 +2,31 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FiSearch } from "react-icons/fi";
+import { AiFillSetting } from "react-icons/ai";
+import { FaBell } from "react-icons/fa";
+
 class NavBar extends Component {
   componentDidMount = () => {};
-
+  log = () => {
+    console.log("yeeee");
+  };
+  setBackground = () => {
+    console.log("hoo");
+    document.getElementById("inputSearch").classList.add("inputSeatchFocus");
+  };
+  removeBackground = () => {
+    document.getElementById("inputSearch").classList.remove("inputSeatchFocus");
+  };
   render() {
     return (
       <Navbar className="navbar" bg="light" variant="light" expand="lg">
-        {/* <Navbar.Brand href="/">Team 20</Navbar.Brand> */}
-        <img
-          className="logoTeam"
-          src={require("../access/logoTeam20.png")}
-        ></img>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+          <img
+            className="logoTeam"
+            src={require("../access/logoTeam20.png")}
+          ></img>
           <Nav className="mr-auto">
             <div className="backgroundTrangchu">
               <Nav.Link id="trangchu" href="/">
@@ -67,9 +79,23 @@ class NavBar extends Component {
             )}
           </Nav>
           <Form inline className="search">
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            <div className="inputSearch" id="inputSearch">
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+                onFocus={this.setBackground}
+                onBlur={this.removeBackground}
+              />
+              <FiSearch onClick={this.log} />
+            </div>
           </Form>
+          <div className="FaBells">
+            <FaBell></FaBell>
+          </div>
+          <div className="AiFillSettings">
+            <AiFillSetting></AiFillSetting>
+          </div>
         </Navbar.Collapse>
       </Navbar>
     );

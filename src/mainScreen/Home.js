@@ -56,6 +56,7 @@ export default class Home extends Component {
   render() {
     return (
       <div id="homePage">
+        {/* <Nav></Nav> */}
         <Navbar
           signout={this.signout}
           loggedIn={this.state.loggedIn}
