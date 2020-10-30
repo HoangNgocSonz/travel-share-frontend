@@ -48,7 +48,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .form-inline .form-control {
+  .inputSearch .form-control {
     display: inline-block;
     vertical-align: middle;
     width: calc(100vw - 700px) !important;

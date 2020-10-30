@@ -24,41 +24,30 @@ export default class Home extends Component {
     super(props);
     this.state = {
       loggedIn: !!localStorage.user,
+      displayPostForm: false,
     };
   }
   showFormPostToHomePage = () => {
-    document.getElementById("FormPostToHomePages").style.display = "block";
-    document.getElementById("postList").style.display = "none";
+    this.setState((prev) => ({ ...prev, displayPostForm: true }));
   };
   hideFormPostToHomePage = () => {
-    document.getElementById("FormPostToHomePages").style.display = "none";
-    document.getElementById("postList").style.display = "block";
+    this.setState((prev) => ({ ...prev, displayPostForm: false }));
   };
-  login() {
-    document.getElementById("FormLogin").style.display = "block";
-    document.getElementById("postList").style.display = "none";
-  }
 
   signInSuccess = (user) => {
     localStorage.user = JSON.stringify(user);
     this.setState((prev) => ({ ...prev, loggedIn: true }));
-    // this.refreshPage();
   };
   signout = () => {
     localStorage.removeItem("user");
     this.setState((prev) => ({ ...prev, loggedIn: false }));
-    // this.refreshPage();
   };
-  // refreshPage = () => {
-  //   window.location.reload(false);
-  // };
   render() {
     return (
       <Router>
         <Navbar
           signout={this.signout}
           loggedIn={this.state.loggedIn}
-          login={this.login}
           showForm={this.showFormPostToHomePage}
         ></Navbar>
         {this.state.displayPostForm && (

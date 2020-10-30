@@ -163,7 +163,7 @@ class PostDetail extends Component {
               </ul>
               <form className="form-inline">
                 <div className="form-group">
-                  <input
+                  <textarea
                     className="form-control"
                     type="comment"
                     placeholder="Your comments"

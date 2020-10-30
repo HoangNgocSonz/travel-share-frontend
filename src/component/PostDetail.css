@@ -61,6 +61,10 @@ nav.navbar {
     }
 }
 
+.post-info {
+    width: 100%;
+}
+
 /* =================== AUTHOR =================== */
 
 .post-author {

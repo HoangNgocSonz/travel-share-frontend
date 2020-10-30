@@ -50,7 +50,7 @@ export default class FormPostToHomePage extends Component {
               id="description"
               className="textarea"
               rows="2"
-              cols="50"
+              cols="40"
               placeholder="Bạn đang nghĩ gì ?"
             ></textarea>
           </div>
