@@ -1,15 +1,18 @@
 .postList {
   margin-top: 10px;
 }
-.homePageWhenShowFormPost {
+
+/* .homePageWhenShowFormPost {
   background-color: rgb(30, 30, 34);
   height: 1300px;
 }
+
 .homePageWhenHideFormPost {
   background-color: white;
   height: auto;
-}
-.FormLogin {
+} */
+
+/* .FormLogin {
   display: none;
 }
 #FormPostToHomePages {
@@ -17,4 +20,8 @@
 }
 .FormSignUp {
   display: none;
+} */
+
+.cursor-pointer {
+  cursor: pointer;
 }

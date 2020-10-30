@@ -2,26 +2,31 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PostDetail.css";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 // Example use:
 // <PostDetail _id="5f8a93f9615ed90023d6bbbf" />
 
-export default class PostDetail extends Component {
+class PostDetail extends Component {
   constructor(props) {
     super(props);
     this.render.bind(this);
     this.componentDidMount.bind(this);
-    this.state = {};
+    this.state = {
+      author: {},
+      isFollowed: false,
+    };
+    this.redirectTo = this.redirectTo.bind(this);
   }
 
   componentDidMount() {
     //
     axios
       .get(
-        `https://travel-share-backend.herokuapp.com/api/post/${this.props._id}`
+        `https://travel-share-backend.herokuapp.com/api/post/${this.props.match.params.id}`
       )
       .then((res) => {
-        this.setState((prev) => ({ ...res.data.data }));
+        this.setState((prev) => ({ ...prev, ...res.data.data }));
       })
       .then(() => {
         axios
@@ -29,9 +34,14 @@ export default class PostDetail extends Component {
             `https://travel-share-backend.herokuapp.com/api/user/${this.state.author}`
           )
           .then((res) => {
+            const { data } = res.data;
+            console.log(data);
             this.setState((prev) => ({
               ...prev,
-              author: { ...res.data.data },
+              author: { ...data },
+              isFollowed: data?.followers?.includes(
+                JSON.parse(localStorage?.user || "{}")?._id
+              ),
             }));
           })
           .catch((err) => console.log("err: " + err));
@@ -39,10 +49,30 @@ export default class PostDetail extends Component {
       .catch((err) => console.log("err: " + err));
   }
 
+  redirectTo(id) {
+    console.log(this.props.history);
+    this.props.history.push(`/user/${id}`);
+  }
+
+  toggleFollow(isFollowed) {
+    if (localStorage.user) {
+      const curId = JSON.parse(localStorage.user)?._id;
+      axios
+        .post(
+          `https://travel-share-backend.herokuapp.com/api/user/${curId}/follow`,
+          { target: this.state.author?._id, unfollow: !isFollowed }
+        )
+        .then((res) => {
+          this.setState((prev) => ({ ...prev, isFollowed }));
+        })
+        .catch((err) => console.log("err: " + err));
+    }
+  }
+
   render() {
     // console.log(this.state);
     return (
-      <div className="container  bg-midnight mt-4" id="post">
+      <div className="container  bg-midnight my-4" id="post">
         <div className="post-img">
           <img
             // src="https://i.pinimg.com/originals/46/dc/dd/46dcdd45408a7aa3b607a03d21db06a7.jpg"
@@ -60,20 +90,41 @@ export default class PostDetail extends Component {
 
           <div className="post-author clearfix">
             <div className="float-left">
-              <div className="author-avatar float-left">
-                <img src="http://placekitten.com/45/45" />
+              <div
+                className="author-avatar float-left cursor-pointer"
+                onClick={() => this.redirectTo(this.state.author?._id)}
+              >
+                <img src={this.state.author?.avatar} />
               </div>
               <div className="float-left">
-                <h6 className="author-name font-weight-bold ">
+                <h6
+                  className="author-name font-weight-bold cursor-pointer"
+                  onClick={() => this.redirectTo(this.state.author?._id)}
+                >
                   {this.state.author?.username}
                 </h6>
-                <span className="sub-text">20 followers</span>
+                <span className="sub-text">
+                  {this.state.author?.followers?.length} followers
+                </span>
               </div>
             </div>
-            <button className="btn btn-outline-info follow float-right">
-              Follow
-            </button>
-            {/* <div className="clearfix"></div> */}
+            <div className="float-right">
+              {this.state.isFollowed ? (
+                <button
+                  className="btn btn-light follow"
+                  onClick={() => this.toggleFollow(false)}
+                >
+                  Followed
+                </button>
+              ) : (
+                <button
+                  className="btn btn-outline-info follow"
+                  onClick={() => this.toggleFollow(true)}
+                >
+                  Follow
+                </button>
+              )}
+            </div>
           </div>
 
           <div className="comments">
@@ -127,8 +178,9 @@ export default class PostDetail extends Component {
             </div>
           </div>
         </div>
-        {/* <h1>title</h1> */}
       </div>
     );
   }
 }
+
+export default withRouter(PostDetail);

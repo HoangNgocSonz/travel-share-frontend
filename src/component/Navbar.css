@@ -7,9 +7,11 @@
 .navbar-light .navbar-nav .nav-link {
   color: rgb(0, 0, 0) !important;
 }
+
 .navbar {
   margin-top: 7px;
 }
+
 .mr-auto img {
   height: 30px;
   width: 30px;
@@ -17,28 +19,34 @@
   margin-left: 15px;
   margin-right: 15px;
 }
+
 .mr-auto img:hover {
   height: 34px;
   margin-top: 5px;
   margin-left: 13px;
 }
+
 #dashboard {
   display: none;
 }
+
 .logoTeam {
   height: 51px;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: -5px;
 }
+
 #homePage .bg-light {
   background-color: rgb(255, 255, 255) !important;
 }
+
 .navbar-light .navbar-nav .nav-link {
   font-weight: 400;
   color: rgb(0, 0, 0) !important;
   font-size: 20px;
 }
+
 @media only screen and (min-width: 600px) {
   .form-inline .form-control {
     display: inline-block;
@@ -50,12 +58,14 @@
     outline: none;
     height: 46px;
   }
+
   .inputSearch {
     height: 46px;
     width: calc(100vw - 640px) !important;
     border-radius: 23px;
     background-color: rgb(235, 235, 235);
   }
+
   input:focus {
     outline: none !important;
     outline-style: none !important;
@@ -63,18 +73,22 @@
     border-color: transparent !important;
     background-color: none;
   }
+
   input:focus .inputSearch {
     background-color: white !important;
   }
 }
-.inputSeatchFocus {
+
+.inputSearchFocus {
   background-color: white;
   box-shadow: 0px 1px 4px #cacaca;
 }
+
 #basic-navbar-nav .mr-auto,
 .mx-auto {
   margin-right: 10px !important;
 }
+
 .navbar-light .navbar-nav .nav-link {
   font-weight: 700;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
@@ -86,18 +100,21 @@
   font-size: 16px;
   margin-top: 2px;
 }
+
 .backgroundTrangchu {
   height: 46px;
   background-color: #211922;
   border-radius: 23px;
   margin-right: 10px;
 }
+
 #trangchu {
   color: rgb(238, 238, 238) !important;
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: -10px;
 }
+
 .AiFillSettings svg,
 .FaBells svg {
   stroke: currentcolor;
@@ -109,6 +126,7 @@
   margin-top: 8px;
   margin-left: 8.6px;
 }
+
 .AiFillSettings,
 .FaBells {
   height: 46px;
@@ -116,6 +134,7 @@
   border-radius: 23px;
   margin-left: 15px;
 }
+
 .FaBells:hover,
 .AiFillSettings:hover {
   background-color: rgb(235, 235, 235);

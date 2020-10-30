@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./FormSignUp.css";
+import { withRouter } from "react-router-dom";
 
-export default class Login extends Component {
-  tt = () => {
-    console.log("tt");
+class Login extends Component {
+  redirectToSignIn = () => {
+    this.props.history.push("/signin");
   };
   render() {
     return (
@@ -16,7 +17,7 @@ export default class Login extends Component {
         <button>Đăng ký</button>
         <div className="go-sign-in">
           <p>Bạn đã có tài khoản? </p>
-          <a href="#link" onClick={this.props.signUpToSignIn}>
+          <a href="#link" onClick={this.redirectToSignIn}>
             Đăng nhập
           </a>
         </div>
@@ -24,3 +25,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);

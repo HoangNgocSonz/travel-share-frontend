@@ -9,12 +9,21 @@ import FormSignIn from "../component/FormSignIn";
 import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
 import UserDetail from "../component/UserDetail";
+import NotFound from "../component/NotFound";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: localStorage.user === "true",
+      loggedIn: !!localStorage.user,
     };
   }
   showFormPostToHomePage = () => {
@@ -30,59 +39,57 @@ export default class Home extends Component {
     document.getElementById("postList").style.display = "none";
   }
 
-  signInSuccess = () => {
-    localStorage.user = "true";
-    this.setState({
-      loggedIn: true,
-    });
-    this.refreshPage();
+  signInSuccess = (user) => {
+    localStorage.user = JSON.stringify(user);
+    this.setState((prev) => ({ ...prev, loggedIn: true }));
+    // this.refreshPage();
   };
   signout = () => {
-    localStorage.user = "false";
-    this.refreshPage();
+    localStorage.removeItem("user");
+    this.setState((prev) => ({ ...prev, loggedIn: false }));
+    // this.refreshPage();
   };
-  refreshPage = () => {
-    window.location.reload(false);
-  };
-  showFromSignUp = () => {
-    document.getElementById("FormLogin").style.display = "none";
-    document.getElementById("FormSignUp").style.display = "block";
-  };
-  signUpToSignIn = () => {
-    console.log("eee");
-    document.getElementById("FormLogin").style.display = "block";
-    document.getElementById("FormSignUp").style.display = "none";
-  };
+  // refreshPage = () => {
+  //   window.location.reload(false);
+  // };
   render() {
     return (
-      <div id="homePage">
-        {/* <Nav></Nav> */}
+      <Router>
         <Navbar
           signout={this.signout}
           loggedIn={this.state.loggedIn}
           login={this.login}
           showForm={this.showFormPostToHomePage}
         ></Navbar>
-        <div id="FormPostToHomePages">
-          <FormPostToHomePage
-            hideForm={this.hideFormPostToHomePage}
-          ></FormPostToHomePage>
-        </div>
-        <div className="FormLogin" id="FormLogin">
-          <FormSignIn
-            showFromSignUp={this.showFromSignUp}
-            signInSuccess={this.signInSuccess}
-          ></FormSignIn>
-        </div>
-        <div className="FormSignUp" id="FormSignUp">
-          <FormSignUp signUpToSignIn={this.signUpToSignIn}></FormSignUp>
-        </div>
-        <div className="postList" id="postList">
-          <PostList></PostList>
-        </div>
-        {/* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */}
-        {/* <UserDetail authorId="5f796dd318d2b23eac946be6" /> */}
-      </div>
+        {this.state.displayPostForm && (
+          <div id="FormPostToHomePages">
+            <FormPostToHomePage
+              hideForm={this.hideFormPostToHomePage}
+            ></FormPostToHomePage>
+          </div>
+        )}
+        <Switch>
+          <Route path="/" exact>
+            <div className="postList">
+              <PostList />
+            </div>
+          </Route>
+          <Route path="/user/:id" component={UserDetail} />
+          <Route path="/post/:id" component={PostDetail} />
+          <Route path="/signin">
+            <div className="FormLogin" id="FormLogin">
+              <FormSignIn signInSuccess={this.signInSuccess}></FormSignIn>
+            </div>
+            {/* <FormSignIn showForm={this.showFormPostToHomePage}></FormSignIn> */}
+          </Route>
+          <Route path="/signup">
+            <FormSignUp />
+            {/* <FormSignUp showForm={this.showFormPostToHomePage}></FormSignUp> */}
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+      /* <PostDetail _id="5f8a93f9615ed90023d6bbbf" /> */
     );
   }
 }

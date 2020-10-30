@@ -1,11 +1,11 @@
-import Axios from "axios";
 import React, { Component } from "react";
 import "./FormSignIn.css";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
-export default class Login extends Component {
-  startLogin = () => {
-    console.log(document.getElementById("email").value);
+class Login extends Component {
+  startLogin = (e) => {
+    e.preventDefault();
     axios
       .get("https://travel-share-backend.herokuapp.com/api/user", {
         params: { email: `${document.getElementById("email").value}` },
@@ -13,38 +13,42 @@ export default class Login extends Component {
       .then((res) => {
         console.log(res.data.data[0]);
         if (
-          res.data.data[0].password == document.getElementById("password").value
+          res.data.data[0]?.password ===
+          document.getElementById("password").value
         ) {
-          this.props.signInSuccess();
+          // success
+          this.props.signInSuccess(res.data.data[0]);
+          this.redirectTo("/");
         } else {
+          // wrong
           console.log("wrong");
           document.getElementById("password").classList.add("wrongPassWord");
         }
       })
       .catch((err) => console.log("err: " + err));
   };
+
+  redirectTo = (path) => {
+    this.props.history.push(path);
+  };
+
   render() {
     return (
-      <form className="form-sign-in">
+      <form className="form-sign-in" onSubmit={this.startLogin}>
         <h1>Đăng nhập</h1>
         <input
           placeholder="Email"
           className="inputEmail"
           id="email"
           type="email"
-          required=""
+          required
         />
-        <input
-          placeholder="Mật khẩu"
-          id="password"
-          type="password"
-          required=""
-        />
-        <button onClick={this.startLogin}>Đăng nhập</button>
+        <input placeholder="Mật khẩu" id="password" type="password" required />
+        <button type="submit">Đăng nhập</button>
         <a href="#link">Quên mật khẩu?</a>
         <div className="create-acc">
           <p>Bạn chưa có tài khoản? </p>
-          <a href="#link" onClick={this.props.showFromSignUp}>
+          <a href="#link" onClick={() => this.redirectTo("/signup")}>
             Đăng ký
           </a>
         </div>
@@ -52,3 +56,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);

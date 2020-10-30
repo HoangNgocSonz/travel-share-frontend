@@ -6,6 +6,7 @@
   padding-bottom: 40px;
   border-radius: 3px;
 }
+
 .form-sign-in h1 {
   box-sizing: border-box;
   padding-top: 20px;
@@ -36,15 +37,18 @@
   background-repeat: no-repeat;
   color: #0e6252;
 }
+
 .wrongPassWord {
   border-bottom: solid 2px #ff5b29 !important;
 }
+
 input:focus,
 input:valid {
   box-shadow: none;
   outline: none;
   background-position: 0 0;
 }
+
 /* input:focus::-webkit-input-placeholder,
 input:valid::-webkit-input-placeholder {
   color: #838383;
@@ -66,12 +70,13 @@ input:valid::-webkit-input-placeholder {
   margin-bottom: 20px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
+
 .form-sign-in button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
-.form-sign-in > a {
+.form-sign-in>a {
   color: #1abc9c;
   margin-left: 140px;
 }
@@ -96,15 +101,17 @@ input:valid::-webkit-input-placeholder {
   .form-sign-in h1 {
     font-size: 25px;
   }
+
   .form-sign-in {
     width: 200px;
     font-size: x-small;
   }
+
   .form-sign-in button {
     width: 70px;
   }
 
-  .form-sign-in > a {
+  .form-sign-in>a {
     margin-left: 63px;
   }
 
@@ -115,9 +122,11 @@ input:valid::-webkit-input-placeholder {
   .form-sign-in input {
     padding-left: 20px;
   }
+
   .form-sign-in input[type="email"] {
     background-size: 18px;
   }
+
   .form-sign-in input[type="password"] {
     background-size: 15px;
   }

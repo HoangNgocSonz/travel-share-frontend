@@ -5,18 +5,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FiSearch } from "react-icons/fi";
 import { AiFillSetting } from "react-icons/ai";
 import { FaBell } from "react-icons/fa";
+import { withRouter } from "react-router-dom";
 
 class NavBar extends Component {
-  componentDidMount = () => {};
-  log = () => {
-    console.log("yeeee");
-  };
   setBackground = () => {
     console.log("hoo");
-    document.getElementById("inputSearch").classList.add("inputSeatchFocus");
+    document.getElementById("inputSearch").classList.add("inputSearchFocus");
   };
   removeBackground = () => {
-    document.getElementById("inputSearch").classList.remove("inputSeatchFocus");
+    document.getElementById("inputSearch").classList.remove("inputSearchFocus");
+  };
+
+  redirectTo = (path) => {
+    this.props.history.push(path);
   };
   render() {
     return (
@@ -33,40 +34,37 @@ class NavBar extends Component {
                 Trang chủ
               </Nav.Link>
             </div>
-            {this.props.loggedIn == true ? (
+
+            {this.props.loggedIn && (
               <Nav.Link href="#link" id="follow">
                 Theo dõi
               </Nav.Link>
-            ) : (
-              ""
             )}
 
-            {this.props.loggedIn == false ? (
+            {this.props.loggedIn ? (
               <Nav.Link
                 href="#link"
                 id="loginOnNavbar"
-                onClick={this.props.login}
-              >
-                Đăng nhập
-              </Nav.Link>
-            ) : (
-              <Nav.Link
                 onClick={this.props.signout}
-                href="#link"
-                id="loginOnNavbar"
               >
                 Đăng xuất
               </Nav.Link>
+            ) : (
+              <Nav.Link
+                href="#link"
+                id="loginOnNavbar"
+                onClick={() => this.redirectTo("/signin")}
+              >
+                Đăng nhập
+              </Nav.Link>
             )}
 
-            {this.props.loggedIn == true ? (
+            {this.props.loggedIn && (
               <Nav.Link href="#link" id="dashboard">
                 Cá nhân
               </Nav.Link>
-            ) : (
-              ""
             )}
-            {this.props.loggedIn == true ? (
+            {this.props.loggedIn && (
               <img
                 className="plus"
                 id="plus"
@@ -74,8 +72,6 @@ class NavBar extends Component {
                 onClick={this.props.showForm}
                 alt="img"
               ></img>
-            ) : (
-              ""
             )}
           </Nav>
           <Form inline className="search">
@@ -101,4 +97,4 @@ class NavBar extends Component {
     );
   }
 }
-export default NavBar;
+export default withRouter(NavBar);
