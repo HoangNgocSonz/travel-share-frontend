@@ -91,7 +91,7 @@ nav.navbar {
 }
 
 .comment-box .form-group:first-child {
-    width: 80%;
+    width: 100%;
 }
 
 .comment-box .form-group:nth-child(2) {
@@ -118,7 +118,8 @@ nav.navbar {
     margin-top: 10px;
 }
 
-.commentList .comment-item>.comment-detail {
+.user-comment-item>.comment-detail,
+.comment-item>.comment-detail {
     display: table-cell;
 }
 
@@ -142,6 +143,10 @@ nav.navbar {
     border-radius: 15px;
 }
 
+.user-comment-item {
+    display: flex;
+}
+
 .comment-detail .comment-author {
     margin: 0;
     font-weight: bold;
@@ -156,4 +161,10 @@ nav.navbar {
     color: #aaa;
     font-family: verdana;
     font-size: 12px;
+}
+
+.bs-icon {
+    font-size: 16px !important;
+    color: #767676;
+    margin-right: 22px
 }

@@ -10,6 +10,7 @@ import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
 import UserDetail from "../component/UserDetail";
 import NotFound from "../component/NotFound";
+import AboutUs from "./AboutUs";
 
 import {
   BrowserRouter as Router,
@@ -63,6 +64,7 @@ export default class Home extends Component {
               <PostList />
             </div>
           </Route>
+          <Route path="/about-us" component={AboutUs} />
           <Route path="/user/:id" component={UserDetail} />
           <Route path="/post/:id" component={PostDetail} />
           <Route path="/signin">
