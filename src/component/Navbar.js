@@ -29,16 +29,30 @@ class NavBar extends Component {
             src={require("../access/logoTeam20.png")}
           ></img>
           <Nav className="mr-auto">
-            <div className="backgroundTrangchu">
+            <div
+              id="homeFocus"
+              className={
+                this.props.location.pathname === "/" ? "backgroundTrangchu" : ""
+              }
+            >
               <Nav.Link id="trangchu" href="/">
                 Trang chủ
               </Nav.Link>
             </div>
 
             {this.props.loggedIn && (
-              <Nav.Link href="#link" id="follow">
-                Theo dõi
-              </Nav.Link>
+              <div
+                id="followFocus"
+                className={
+                  this.props.location.pathname === "/following"
+                    ? "backgroundTrangchu"
+                    : ""
+                }
+              >
+                <Nav.Link href="#link" id="follow">
+                  Theo dõi
+                </Nav.Link>
+              </div>
             )}
 
             {this.props.loggedIn ? (
@@ -59,11 +73,7 @@ class NavBar extends Component {
               </Nav.Link>
             )}
 
-            {this.props.loggedIn && (
-              <Nav.Link href="#link" id="dashboard">
-                Cá nhân
-              </Nav.Link>
-            )}
+            {this.props.loggedIn && <Nav.Link href="#link">Cá nhân</Nav.Link>}
             {this.props.loggedIn && (
               <img
                 className="plus"

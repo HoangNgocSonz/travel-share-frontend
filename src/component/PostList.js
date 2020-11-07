@@ -17,6 +17,7 @@ class PostList extends Component {
     this.redirectTo = this.redirectTo.bind(this);
   }
   componentDidMount() {
+    console.log("path:" + this.props.location.pathname);
     if (window.innerWidth < 900 && window.innerWidth > 372) {
       this.setState({
         widthImg: 176,

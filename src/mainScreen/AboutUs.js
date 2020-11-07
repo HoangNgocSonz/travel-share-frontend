@@ -10,7 +10,7 @@ export default class Login extends Component {
         </div>
         <div class="about-us">
           <div id="per01" class="per">
-            <img class="avt" src={require("../access/avt.jpg")} alt="pic"></img>
+            <img class="avt" src={require("../access/son.jpg")} alt="pic"></img>
             <h3 class="name">Hoàng Ngọc Sơn</h3>
             <h4 class="position">Nhóm trưởng</h4>
             <p class="per-id">18021085</p>
@@ -26,7 +26,11 @@ export default class Login extends Component {
             </a>
           </div>
           <div id="per02" class="per">
-            <img class="avt" src={require("../access/avt.jpg")} alt="pic"></img>
+            <img
+              class="avt"
+              src={require("../access/cuong.jpg")}
+              alt="pic"
+            ></img>
             <h3 class="name">Lê Mạnh Cường</h3>
             <h4 class="position">Thành viên</h4>
             <p class="per-id">18021085</p>
@@ -58,7 +62,11 @@ export default class Login extends Component {
             </a>
           </div>
           <div id="per04" class="per">
-            <img class="avt" src={require("../access/avt.jpg")} alt="pic"></img>
+            <img
+              class="avt"
+              src={require("../access/xuan.jpg")}
+              alt="pic"
+            ></img>
             <h3 class="name">Nguyễn Văn Xuân</h3>
             <h4 class="position">Thành viên</h4>
             <p class="per-id">18021085</p>

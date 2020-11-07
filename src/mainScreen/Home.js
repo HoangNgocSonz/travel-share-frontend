@@ -10,6 +10,7 @@ import FormSignUp from "../component/FormSignUp";
 import PostDetail from "../component/PostDetail";
 import UserDetail from "../component/UserDetail";
 import NotFound from "../component/NotFound";
+import AboutUs from "./AboutUs";
 
 import {
   BrowserRouter as Router,

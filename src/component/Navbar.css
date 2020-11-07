@@ -51,7 +51,7 @@
   .inputSearch .form-control {
     display: inline-block;
     vertical-align: middle;
-    width: calc(100vw - 700px) !important;
+    width: calc(100vw - 830px) !important;
     margin-left: 16px;
     background-color: rgb(235, 235, 235);
     border: none;
@@ -61,7 +61,7 @@
 
   .inputSearch {
     height: 46px;
-    width: calc(100vw - 640px) !important;
+    width: calc(100vw - 770px) !important;
     border-radius: 23px;
     background-color: rgb(235, 235, 235);
   }
@@ -96,22 +96,31 @@
     ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3, Hiragino Kaku Gothic Pro, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,
     ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
     Segoe UI Symbol;
-  color: #333 !important;
+  /* color: #333 !important; */
   font-size: 16px;
-  margin-top: 2px;
+  padding: 8px !important;
+
+  /* padding-top: 6px !important;
+  padding-left: 10px !important;
+  padding-right: 15px !important; */
 }
 
 .backgroundTrangchu {
-  height: 46px;
-  background-color: #211922;
+  background-color: black;
   border-radius: 23px;
   margin-right: 10px;
+  height: 46px;
+}
+
+.navbar-light .navbar-nav .backgroundTrangchu .nav-link {
+  color: white !important;
+  margin-top: 2px;
+  margin-right: 10px;
+  margin-left: 10px;
+  /* background-color: #211922; */
 }
 
 #trangchu {
-  color: rgb(238, 238, 238) !important;
-  margin-right: 10px;
-  margin-left: 10px;
   margin-bottom: -10px;
 }
 
