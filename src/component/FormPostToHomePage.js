@@ -8,6 +8,7 @@ export default class FormPostToHomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.user = JSON.parse(localStorage.user);
   }
 
   componentDidMount() {}
@@ -16,7 +17,7 @@ export default class FormPostToHomePage extends Component {
     var imageLinkList = imageLinkString.split(",");
     axios
       .post("https://travel-share-backend.herokuapp.com/api/post", {
-        author: "5f7a012776547955016262e6",
+        author: this.user._id,
         title: document.getElementById("title").value,
         description: document.getElementById("description").value,
         images: imageLinkList,
@@ -44,7 +45,7 @@ export default class FormPostToHomePage extends Component {
             ></img>
           </div>
           <div className="middle">
-            <img src={require("../access/avatar_2009.jpg")}></img>
+            <img src={this.user.avatar}></img>
             <input type="text" id="title" placeholder="Tiêu đề"></input>
             <textarea
               id="description"

@@ -64,6 +64,7 @@ export default class Home extends Component {
               <PostList />
             </div>
           </Route>
+          <Route path="/about-us" component={AboutUs} />
           <Route path="/user/:id" component={UserDetail} />
           <Route path="/post/:id" component={PostDetail} />
           <Route path="/signin">
